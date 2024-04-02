@@ -16,14 +16,15 @@ public class TeleopSwerve extends Command {
   private final DoubleSupplier translationSup;
   public final DoubleSupplier strafeSup;
   public DoubleSupplier rotationSup;
-  private DoubleSupplier NOSupplier;
+  private BooleanSupplier NOSupplier;
+  private boolean lastNOSValue;
 
   public TeleopSwerve(
       Swerve swerve,
       DoubleSupplier translationSup,
       DoubleSupplier strafeSup,
       DoubleSupplier rotationSup,
-      DoubleSupplier NOSupplier) {
+      BooleanSupplier NOSupplier) {
     this.swerve = swerve;
     addRequirements(swerve);
 
@@ -31,6 +32,11 @@ public class TeleopSwerve extends Command {
     this.strafeSup = strafeSup;
     this.rotationSup = rotationSup;
     this.NOSupplier = NOSupplier;
+  }
+
+  @Override
+  public void initialize() {
+    lastNOSValue = this.NOSupplier.getAsBoolean();
   }
 
   public double[] getJoystickValues() {
@@ -47,15 +53,20 @@ public class TeleopSwerve extends Command {
   @Override
   public void execute() {
     double translationVal, strafeVal, rotationVal;
-    double isNOSEnabled = NOSupplier.getAsDouble();
+    boolean isNOSEnabled = NOSupplier.getAsBoolean();
     double[] joystickValues = this.getJoystickValues();
 
     translationVal = joystickValues[0];
     strafeVal = joystickValues[1];
-    if (isNOSEnabled > 0.1) {
-      translationVal = joystickValues[0] * 0.5;
-      strafeVal = joystickValues[1] * 0.5;
+    if (isNOSEnabled != lastNOSValue) {
+      if (isNOSEnabled) {
+        swerve.setLimity(isNOSEnabled);
+      } else {
+        swerve.setLimity(isNOSEnabled);
+      }
     }
+
+    lastNOSValue = isNOSEnabled;
     rotationVal = -joystickValues[2];
 
     /* Drive */

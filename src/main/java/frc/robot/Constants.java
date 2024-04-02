@@ -204,8 +204,8 @@ public final class Constants {
     public static final double[] shooterFeedforward = { 0.26, 0.002 };
     public static final int toleranceRPM = 250;
     public static final int shooterIDLE = 2000;
-    public static final double maxVelocityPerSecond = 4000; // RPM/s
-    public static final double maxAcceleration = 2000; // RPM/s^2 og val: 700
+    public static final double maxVelocityPerSecond = 5000; // RPM/s
+    public static final double maxAcceleration = 4500; // RPM/s^2 og val: 700
     // TODO: remember to change accel if shooter is too fast - just an
     // experiment¯\_(ツ)_/¯
 
