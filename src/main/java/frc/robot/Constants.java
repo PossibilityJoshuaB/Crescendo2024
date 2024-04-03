@@ -188,7 +188,8 @@ public final class Constants {
     public static enum IntakeMode {
       IN,
       OUT,
-      OFF
+      OFF,
+      STASH
     }
   }
 
@@ -221,7 +222,8 @@ public final class Constants {
       OFF,
       INFEED,
       SHOOTFEED,
-      HP
+      HP,
+      CONTINUE
     }
 
     // Interpolation
