@@ -181,6 +181,11 @@ public class Swerve extends SubsystemBase {
     return new Rotation2d(yawRad);
   }
 
+  public void setLimity(boolean overdrive){
+    for (SwerveModule mod : mSwerveMods) {
+      mod.setLimit(overdrive);
+    }
+  }
   public double calculateSnapOutput(Rotation2d setpoint, Rotation2d snapVelocity) {
     double ffOutput = -snapFFModel.calculate(snapVelocity.getRadians());
     double rotation = -snapPIDController.calculate(getYawForSnap().getRadians(), snapSetpoint.getRadians());
