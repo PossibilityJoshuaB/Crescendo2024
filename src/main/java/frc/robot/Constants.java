@@ -212,6 +212,7 @@ public final class Constants {
     public static final double[] tailPID = new double[] { 0, 0.000001, 0 };
     public static final double tailFF = 0.002250;
     public static final double tailTolerance = 30;
+    public static final double tailSpeed = 3075;
 
     public static final double onTheFlyMultiplier = 18f;
 
@@ -251,10 +252,10 @@ public final class Constants {
 
     public static final PolynomialRegression armAngleInterpolationPolynominalRegression = new PolynomialRegression(
         Arrays.asList(
-            new Point(1.43, Units.degreesToRadians(47f)),
-            new Point(3, Units.degreesToRadians(34f)),
-            new Point(4, Units.degreesToRadians(29f)),
-            new Point(5, Units.degreesToRadians(24.5f))),
+            new Point(1.43, Units.degreesToRadians(48f)),
+            new Point(3, Units.degreesToRadians(34.5f)),
+            new Point(4, Units.degreesToRadians(29.5f)),
+            new Point(5, Units.degreesToRadians(25f))),
         2);
   }
 

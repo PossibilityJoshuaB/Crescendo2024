@@ -95,7 +95,7 @@ public class RobotContainer {
   public void disabledActions() {
     arm.resetI();
     shooter.resetI();
-    feeder.resetI();
+    feeder.resetI(); 
     s_Swerve.resetSnapI();
     arm.runState(new TrapezoidProfile.State(arm.getEncoderPosition().getRadians(), 0));
   }
@@ -203,15 +203,16 @@ public class RobotContainer {
         new FeedOut(feeder),
         new SolidColor(lights, Constants.LightsConstants.Colors.BLUE)));
 
-    operator.start().whileTrue(new SolidColor(lights, Constants.LightsConstants.Colors.BRIGHT));
+    operator.start().whileTrue(new SolidColor(lights, Constants.LightsConstants.Colors.BRIGHT).withTimeout(1));
 
     driver.leftBumper().whileTrue(
         new SequentialCommandGroup(
-            new SolidColor(lights, Constants.LightsConstants.Colors.RED),
+            new SolidColor(lights, Constants.LightsConstants.Colors.BRIGHT),
             new ParallelCommandGroup(
                 new ToAngle(() -> Constants.ArmConstants.min.getRadians(), arm),
                 new FeedSource(feeder)),
             new SolidColor(lights, Constants.LightsConstants.Colors.GREEN)).finallyDo(this::idle));
+
     operator.leftBumper().whileTrue(new SequentialCommandGroup(
         new ParallelCommandGroup(
             new SolidColor(lights, Constants.LightsConstants.Colors.RED),

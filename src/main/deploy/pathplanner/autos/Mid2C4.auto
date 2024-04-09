@@ -5,7 +5,7 @@
       "x": 1.40126633644104,
       "y": 5.551969528198242
     },
-    "rotation": -8.60924134472113e-25
+    "rotation": -7.997535547723415e-26
   },
   "command": {
     "type": "sequential",
@@ -50,7 +50,25 @@
         {
           "type": "path",
           "data": {
-            "pathName": "mid.2"
+            "pathName": "midC3.1"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "noteShoot"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "midC2.1"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "noteShoot"
           }
         }
       ]
