@@ -5,16 +5,22 @@
       "x": 1.412998914718628,
       "y": 5.563053131103516
     },
-    "rotation": -4.588627300571694e-22
+    "rotation": -1.8319886596239027e-29
   },
   "command": {
     "type": "sequential",
     "data": {
       "commands": [
         {
+          "type": "named",
+          "data": {
+            "name": "shotsub"
+          }
+        },
+        {
           "type": "path",
           "data": {
-            "pathName": "2056_counter.1"
+            "pathName": "mid.1"
           }
         },
         {
@@ -26,7 +32,19 @@
         {
           "type": "path",
           "data": {
-            "pathName": "2056_counter.2"
+            "pathName": "midC3.1"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "noteShoot"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "mid.2"
           }
         },
         {

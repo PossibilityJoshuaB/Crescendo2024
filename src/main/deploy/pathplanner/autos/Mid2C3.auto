@@ -2,25 +2,55 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 1.412998914718628,
-      "y": 5.563053131103516
+      "x": 1.40126633644104,
+      "y": 5.551969528198242
     },
-    "rotation": -2.9904783372124484e-28
+    "rotation": 1.48220681866118e-25
   },
   "command": {
     "type": "sequential",
     "data": {
       "commands": [
         {
+          "type": "path",
+          "data": {
+            "pathName": "7note.1"
+          }
+        },
+        {
           "type": "named",
           "data": {
-            "name": "shotsub"
+            "name": "noteShoot"
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "mid.1"
+            "pathName": "7note.2"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "noteShoot"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "7note.3"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "noteShoot"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "midC3.1"
           }
         },
         {
@@ -33,30 +63,6 @@
           "type": "path",
           "data": {
             "pathName": "mid.2"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "noteShoot"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "mid.3"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "noteShoot"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "mid.4"
           }
         },
         {
