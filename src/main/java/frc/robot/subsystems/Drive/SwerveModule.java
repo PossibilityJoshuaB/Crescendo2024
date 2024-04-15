@@ -186,7 +186,7 @@ public class SwerveModule {
     if(overdrive){
       driveMotor.setSmartCurrentLimit(60, 60);
     } else {
-      driveMotor.setSmartCurrentLimit(30, 30);
+      driveMotor.setSmartCurrentLimit(35, 35);
     }
   }
   public SwerveModuleState getState() {
